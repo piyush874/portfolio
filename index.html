@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyush Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-glow"></div>
+
+    <!-- Navbar -->
+    <nav>
+        <h2 class="logo">Piyush</h2>
+        <div class="menu-btn" id="menuBtn">
+                ☰
+        </div>
+
+        <ul id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+        <button id="themeBtn">
+                Dark Mode
+            </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+            <h1>Hello, I'm Piyush 👋</h1>
+            <p id="changing-text">
+                Web Developer
+            </p>
+
+            <button>Hire Me</button>
+        </div>
+
+        <div class="hero-image">
+            <img src="img.jfif" alt="">
+        </div>
+
+    </section>
+    <section class="about hidden" id="about">
+        <h1>About Me</h1>
+        <p>
+            I am a frontend and Python developer passionate about building modern websites and applications.
+        </p>
+
+    </section>
+    <section class="projects hidden" id="projects">
+    <h1>Projects</h1>
+    <div class="project-container">
+        <div class="project-card">
+            <h2>Portfolio Website</h2>
+            <p>
+                Responsive portfolio with dark mode and animations.
+            </p>
+            <button class="project-btn"
+            data-title="Portfolio Website"
+            data-desc="Responsive portfolio with dark mode, animations and modern UI."
+            data-img="img.jfif"
+            data-live="https://lucky-kataifi-def1fa.netlify.app/"
+            data-github="https://github.com/piyush874">
+                View Project
+            </button>
+        </div>
+        <div class="project-card">
+            <h2>Notes App</h2>
+            <p>
+                Notes app with local storage and edit feature.
+            </p>
+            <button class="project-btn"
+            data-title="Notes App"
+            data-desc="Notes app with local storage, edit and delete functionality."
+            data-img="img.jfif"
+            data-live="https://your-notes-app.netlify.app"
+            data-github="https://github.com/piyush874">
+
+                View Project
+
+            </button>            
+        </div>
+    </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills hidden" id="skills">
+
+        <div class="card">
+
+            <h2>Web Development</h2>
+
+            <p>HTML, CSS, JavaScript</p>
+
+            <div class="skill-bar">
+
+                <div class="skill-progress web">
+                    90%
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Python</h2>
+
+            <p>GUI Apps & Automation</p>
+
+            <div class="skill-bar">
+
+                <div class="skill-progress python">
+
+                    80%
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h2>UI Design</h2>
+
+            <p>Modern clean interfaces</p>
+
+            <div class="skill-bar">
+
+                <div class="skill-progress ui">
+
+                    75%
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section class="contact hidden" id="contact">
+    <h1>Contact Me</h1>
+    <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">
+            Send Message
+        </button>
+    </form>
+    </section>
+<footer>
+
+    <h2>Connect With Me</h2>
+
+    <div class="socials">
+
+        <a href="https://github.com/piyush874">GitHub</a>
+
+        <a href="https://www.linkedin.com/in/piyush-k-ab1998396/">LinkedIn</a>
+
+        <a href="#">Instagram</a>
+
+    </div>
+
+</footer>
+<button id="topBtn">
+    ↑
+</button>
+<!-- Project Modal -->
+
+<div class="modal" id="projectModal">
+
+    <div class="modal-content">
+
+        <span class="close-btn" id="closeModal">
+            &times;
+        </span>
+
+        <img id="modalImg" src="" alt="">
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalDesc"></p>
+
+        <div class="modal-buttons">
+
+            <a href="#" id="liveBtn" target="_blank">
+                Live Demo
+            </a>
+
+            <a href="#" id="githubBtn" target="_blank">
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
