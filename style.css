@@ -12,6 +12,7 @@ body{
     background: #0f172a;
     color: white;
     overflow-x:hidden;
+    padding-top:120px;
 }
 
 /*for smooth transition*/
@@ -26,18 +27,37 @@ a{
 /* Navbar */
 
 nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
-    padding: 20px 10%;
-    background: #111827;
-    position:sticky;
-    top:0;
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 10%;
+
+    position:fixed;
+
+    top:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:90%;
+
+    border-radius:20px;
+
+    background:rgba(17,24,39,0.6);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.08);
 
     z-index:1000;
-}
 
+    box-shadow:0 0 25px rgba(0,0,0,0.2);
+}
 .logo{
     color: cyan;
 }
@@ -83,6 +103,8 @@ nav a:hover{
 }
 
 button{
+    position: relative;
+    overflow: hidden;
 
     padding:12px 25px;
 
@@ -247,7 +269,12 @@ button:hover{
 }
 
 .light nav{
-    background: #e5e7eb;
+
+    background:rgba(255,255,255,0.7);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(0,0,0,0.08);
 }
 
 .light .card{
@@ -879,5 +906,531 @@ section{
         transform:scale(1);
 
         opacity:1;
+    }
+}
+/* Stats Section */
+
+.stats{
+
+    padding:80px 10%;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+}
+
+.stat-box{
+
+    width:250px;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    transition:0.3s;
+}
+
+.stat-box:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 0 25px rgba(0,255,255,0.3);
+}
+
+.stat-box h1{
+
+    font-size:55px;
+
+    color:cyan;
+
+    margin-bottom:10px;
+}
+
+.stat-box p{
+
+    color:lightgray;
+
+    font-size:18px;
+}
+
+/* Light Theme */
+
+.light .stat-box{
+
+    background:#f1f5f9;
+
+    color:black;
+}
+
+.light .stat-box h1{
+
+    color:#7c3aed;
+}
+
+.light .stat-box p{
+
+    color:#374151;
+}
+/* Mouse Glow Cursor */
+
+.cursor-glow{
+
+    position:fixed;
+
+    width:250px;
+
+    height:250px;
+
+    background:radial-gradient(
+        circle,
+        rgba(0,255,255,0.25),
+        transparent 70%
+    );
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    transform:translate(-50%, -50%);
+
+    z-index:-1;
+
+    transition:
+    transform 0.08s linear,
+    background 0.3s;
+}
+
+/* Light Theme Glow */
+
+.light .cursor-glow{
+
+    background:radial-gradient(
+        circle,
+        rgba(124,58,237,0.25),
+        transparent 70%
+    );
+}
+/* Particles Background */
+
+#particles-js{
+
+    position:fixed;
+
+    width:100%;
+    height:100vh;
+
+    top:0;
+    left:0;
+
+    z-index:-2;
+}
+.project-card,
+.card,
+.stat-box{
+
+    transform-style:preserve-3d;
+
+    perspective:1000px;
+}
+/* GitHub Section */
+
+.github-section{
+
+    padding:100px 10%;
+
+    text-align:center;
+}
+
+.github-section h1{
+
+    font-size:40px;
+
+    margin-bottom:50px;
+
+    color:cyan;
+}
+
+.github-card{
+
+    max-width:500px;
+
+    margin:auto;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    transition:0.3s;
+}
+
+.github-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 0 30px rgba(0,255,255,0.3);
+}
+
+.github-card img{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    margin-bottom:20px;
+
+    border:4px solid cyan;
+}
+
+.github-card h2{
+
+    margin-bottom:10px;
+}
+
+.github-card p{
+
+    color:lightgray;
+
+    margin-bottom:25px;
+}
+
+.github-stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    margin-bottom:30px;
+}
+
+.github-stats h3{
+
+    color:cyan;
+
+    font-size:28px;
+}
+
+.github-card a{
+
+    display:inline-block;
+
+    padding:12px 25px;
+
+    background:cyan;
+
+    color:black;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.github-card a:hover{
+
+    transform:scale(1.05);
+}
+
+/* Light Theme */
+
+.light .github-section h1{
+
+    color:#0f172a;
+}
+
+.light .github-card{
+
+    background:#f1f5f9;
+
+    color:black;
+}
+
+.light .github-card p{
+
+    color:#374151;
+}
+
+.light .github-card img{
+
+    border-color:#7c3aed;
+}
+
+.light .github-stats h3{
+
+    color:#7c3aed;
+}
+
+.light .github-card a{
+
+    background:#7c3aed;
+
+    color:white;
+}
+/* Chatbot */
+
+.chatbot-toggle{
+
+    position:fixed;
+
+    bottom:30px;
+
+    left:30px;
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:cyan;
+
+    color:black;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    z-index:5000;
+
+    box-shadow:0 0 25px rgba(0,255,255,0.5);
+
+    transition:0.3s;
+}
+
+.chatbot-toggle:hover{
+
+    transform:scale(1.1);
+}
+
+.chatbot-container{
+
+    position:fixed;
+
+    bottom:110px;
+
+    left:30px;
+
+    width:350px;
+
+    max-height:500px;
+
+    background:#111827;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(20px);
+
+    transition:0.4s;
+
+    z-index:5000;
+
+    box-shadow:0 0 40px rgba(0,255,255,0.3);
+}
+
+.chatbot-container.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+}
+
+.chatbot-header{
+
+    padding:20px;
+
+    background:cyan;
+
+    color:black;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.chatbot-header span{
+
+    cursor:pointer;
+
+    font-size:22px;
+}
+
+.chatbot-body{
+
+    padding:20px;
+
+    flex:1;
+
+    overflow-y:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.bot-message,
+.user-message{
+
+    padding:12px 15px;
+
+    border-radius:15px;
+
+    max-width:80%;
+
+    line-height:1.5;
+}
+
+.bot-message{
+
+    background:#1e293b;
+
+    align-self:flex-start;
+
+    color:white;
+}
+
+.user-message{
+
+    background:cyan;
+
+    color:black;
+
+    align-self:flex-end;
+}
+
+.chatbot-input{
+
+    display:flex;
+
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.chatbot-input input{
+
+    flex:1;
+
+    padding:15px;
+
+    border:none;
+
+    outline:none;
+
+    background:#0f172a;
+
+    color:white;
+}
+
+.chatbot-input button{
+
+    border-radius:0;
+
+    box-shadow:none;
+}
+
+/* Light Theme */
+
+.light .chatbot-container{
+
+    background:white;
+
+    color:black;
+}
+
+.light .chatbot-header{
+
+    background:#7c3aed;
+
+    color:white;
+}
+
+.light .chatbot-toggle{
+
+    background:#7c3aed;
+
+    color:white;
+
+    box-shadow:0 0 25px rgba(124,58,237,0.4);
+}
+
+.light .bot-message{
+
+    background:#e2e8f0;
+
+    color:black;
+}
+
+.light .user-message{
+
+    background:#7c3aed;
+
+    color:white;
+}
+
+.light .chatbot-input input{
+
+    background:#f1f5f9;
+
+    color:black;
+}
+
+/* Mobile */
+
+@media(max-width:500px){
+
+    .chatbot-container{
+
+        width:90%;
+
+        left:5%;
+    }
+
+    .chatbot-toggle{
+
+        left:20px;
     }
 }

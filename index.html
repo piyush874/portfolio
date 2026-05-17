@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="particles-js"></div>
+    
     <div class="bg-glow"></div>
 
     <!-- Navbar -->
@@ -52,6 +54,72 @@
         </p>
 
     </section>
+    <section class="github-section hidden">
+
+        <h1>GitHub Stats</h1>
+
+        <div class="github-card">
+
+            <img id="githubAvatar" src="" alt="">
+
+            <h2 id="githubName"></h2>
+
+            <p id="githubBio"></p>
+
+            <div class="github-stats">
+
+                <div>
+                    <h3 id="repoCount">0</h3>
+                    <p>Repos</p>
+                </div>
+
+                <div>
+                    <h3 id="followers">0</h3>
+                    <p>Followers</p>
+                </div>
+
+                <div>
+                    <h3 id="following">0</h3>
+                    <p>Following</p>
+                </div>
+
+            </div>
+
+            <a id="githubProfile"
+            target="_blank">
+                Visit GitHub
+            </a>
+
+        </div>
+
+    </section>
+    <section class="stats hidden">
+
+        <div class="stat-box">
+
+            <h1 class="counter" data-target="10">0</h1>
+
+            <p>Projects Completed</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <h1 class="counter" data-target="5">0</h1>
+
+            <p>Technologies</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <h1 class="counter" data-target="100">0</h1>
+
+            <p>Responsive Design</p>
+
+        </div>
+
+    </section>
     <section class="projects hidden" id="projects">
     <h1>Projects</h1>
     <div class="project-container">
@@ -64,7 +132,7 @@
             data-title="Portfolio Website"
             data-desc="Responsive portfolio with dark mode, animations and modern UI."
             data-img="img.jfif"
-            data-live="https://lucky-kataifi-def1fa.netlify.app/"
+            data-live="https://piyushhh-portfolio.netlify.app/"
             data-github="https://github.com/piyush874">
                 View Project
             </button>
@@ -78,7 +146,7 @@
             data-title="Notes App"
             data-desc="Notes app with local storage, edit and delete functionality."
             data-img="img.jfif"
-            data-live="https://your-notes-app.netlify.app"
+            data-live="https://amazing-notess.netlify.app/"
             data-github="https://github.com/piyush874">
 
                 View Project
@@ -146,10 +214,10 @@
     </section>
     <section class="contact hidden" id="contact">
     <h1>Contact Me</h1>
-    <form>
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea placeholder="Your Message"></textarea>
+    <form id="contactForm">
+        <input type="text" name="from_name" placeholder="Your Name">
+        <input type="email" name="from_email" placeholder="Your Email">
+        <textarea name="message" placeholder="Your Message"></textarea>
         <button type="submit">
             Send Message
         </button>
@@ -204,6 +272,51 @@
     </div>
 
 </div>
+<div class="cursor-glow"></div>
+<!-- AI Chatbot -->
+
+<div class="chatbot-toggle" id="chatbotToggle">
+
+    💬
+
+</div>
+
+<div class="chatbot-container" id="chatbotContainer">
+
+    <div class="chatbot-header">
+
+        <h2>Piyush AI</h2>
+
+        <span id="closeChatbot">
+            ✖
+        </span>
+
+    </div>
+
+    <div class="chatbot-body" id="chatbotBody">
+
+        <div class="bot-message">
+            Hello 👋 Ask me anything about Piyush.
+        </div>
+
+    </div>
+
+    <div class="chatbot-input">
+
+        <input
+        type="text"
+        id="chatInput"
+        placeholder="Type a message...">
+
+        <button id="sendBtn">
+            Send
+        </button>
+
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
