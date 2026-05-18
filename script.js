@@ -1,3 +1,88 @@
+let projects =
+JSON.parse(localStorage.getItem("projects")) || [
+
+    {
+
+        title:"Portfolio Website",
+
+        desc:"Responsive portfolio with dark mode, animations and modern UI.",
+
+        img:"img.jfif",
+
+        live:"https://piyushhh-portfolio.netlify.app/",
+
+        github:"https://github.com/piyush874"
+
+    },
+
+    {
+
+        title:"Notes App",
+
+        desc:"Notes app with local storage, edit and delete functionality.",
+
+        img:"img.jfif",
+
+        live:"https://amazing-notess.netlify.app/",
+
+        github:"https://github.com/piyush874"
+
+    }
+
+];
+const projectContainer =
+document.querySelector("#projectContainer");
+
+function loadProjects(){
+
+    projectContainer.innerHTML = "";
+
+    projects.forEach(function(project,index){
+
+        projectContainer.innerHTML += `
+
+        <div class="project-card tilt-card">
+
+            <h2>${project.title}</h2>
+
+            <p>
+                ${project.desc}
+            </p>
+            <button
+            class="delete-btn"
+            data-index="${index}">
+
+                Delete
+
+            </button>
+
+            <button class="project-btn"
+
+            data-title="${project.title}"
+
+            data-desc="${project.desc}"
+
+            data-img="${project.img}"
+
+            data-live="${project.live}"
+
+            data-github="${project.github}">
+
+                View Project
+
+            </button>
+
+        </div>
+
+        `;
+    });
+
+    activateProjectButtons();
+    activateDeleteButtons();
+}
+
+loadProjects();
+
 /* Typing Animation */
 
 const roles = [
@@ -234,8 +319,6 @@ function(event){
 });
 /* Project Modal */
 
-const projectBtns =
-document.querySelectorAll(".project-btn");
 
 const modal =
 document.querySelector("#projectModal");
@@ -258,30 +341,37 @@ document.querySelector("#liveBtn");
 const githubBtn =
 document.querySelector("#githubBtn");
 
-projectBtns.forEach(function(btn){
+function activateProjectButtons(){
 
-    btn.addEventListener("click", function(){
+    const projectBtns =
+    document.querySelectorAll(".project-btn");
 
-        modal.classList.add("show");
+    projectBtns.forEach(function(btn){
 
-        modalTitle.innerHTML =
-        btn.dataset.title;
+        btn.addEventListener("click", function(){
 
-        modalDesc.innerHTML =
-        btn.dataset.desc;
+            modal.classList.add("show");
 
-        modalImg.src =
-        btn.dataset.img;
+            modalTitle.innerHTML =
+            btn.dataset.title;
 
-        liveBtn.href =
-        btn.dataset.live;
+            modalDesc.innerHTML =
+            btn.dataset.desc;
 
-        githubBtn.href =
-        btn.dataset.github;
+            modalImg.src =
+            btn.dataset.img;
+
+            liveBtn.href =
+            btn.dataset.live;
+
+            githubBtn.href =
+            btn.dataset.github;
+
+        });
 
     });
 
-});
+}
 
 /* Close Modal */
 
@@ -669,5 +759,201 @@ function sendMessage(){
         chatbotBody.scrollHeight;
 
     }, 700);
+
+}
+/* Admin Panel */
+
+const adminPanel =
+document.querySelector("#adminPanel");
+
+const closeAdmin =
+document.querySelector("#closeAdmin");
+
+const loginAdminBtn =
+document.querySelector("#loginAdminBtn");
+
+const adminPassword =
+document.querySelector("#adminPassword");
+
+const adminContent =
+document.querySelector("#adminContent");
+const logoutAdminBtn =
+document.querySelector("#logoutAdminBtn");
+
+/* Logout */
+
+logoutAdminBtn.addEventListener("click",
+function(){
+
+    adminContent.style.display = "none";
+
+    adminPassword.value = "";
+
+    document.body.classList.remove("admin-mode");
+
+    document.querySelectorAll(".delete-btn")
+    .forEach(function(btn){
+
+        btn.style.display = "none";
+
+    });
+
+    adminPanel.classList.remove("show");
+
+    alert("Logged Out");
+
+});
+
+/* Open Admin With Secret Key */
+
+document.addEventListener("keydown",
+function(event){
+
+    if(event.ctrlKey && event.shiftKey && event.key === "A"){
+
+        adminPanel.classList.add("show");
+
+    }
+
+});
+
+/* Close */
+
+closeAdmin.addEventListener("click",
+function(){
+
+    adminPanel.classList.remove("show");
+
+});
+
+/* Login */
+
+loginAdminBtn.addEventListener("click",
+function(){
+
+    if(adminPassword.value === "piyush123"){
+
+        adminContent.style.display = "flex";
+        document.body.classList.add("admin-mode");
+
+        document.querySelectorAll(".delete-btn")
+        .forEach(function(btn){
+
+            btn.style.display = "block";
+
+        });
+
+        alert("Admin Login Success 🚀");
+    }
+
+    else{
+
+        alert("Wrong Password");
+    }
+
+});/* Add New Project */
+
+const addProjectBtn =
+document.querySelector("#addProjectBtn");
+
+addProjectBtn.addEventListener("click",
+function(){
+
+    const title =
+    document.querySelector("#projectTitle").value;
+
+    const desc =
+    document.querySelector("#projectDesc").value;
+
+    const img =
+    document.querySelector("#projectImg").value;
+
+    const live =
+    document.querySelector("#projectLive").value;
+
+    const github =
+    document.querySelector("#projectGithub").value;
+
+    if(
+        title === "" ||
+        desc === "" ||
+        img === "" ||
+        live === "" ||
+        github === ""
+    ){
+
+        alert("Fill All Fields");
+
+        return;
+    }
+
+    const newProject = {
+
+        title,
+        desc,
+        img,
+        live,
+        github
+
+    };
+
+    projects.push(newProject);
+
+    localStorage.setItem(
+        "projects",
+        JSON.stringify(projects)
+    );
+
+    loadProjects();
+    if(document.body.classList.contains("admin-mode")){
+
+        document.querySelectorAll(".delete-btn")
+        .forEach(function(btn){
+
+            btn.style.display = "block";
+
+        });
+
+    }
+
+    alert("Project Added Successfully 🚀");
+
+});
+/* Delete Project */
+
+function activateDeleteButtons(){
+
+    const deleteBtns =
+    document.querySelectorAll(".delete-btn");
+
+    deleteBtns.forEach(function(btn){
+
+        btn.addEventListener("click",
+        function(){
+
+            const index =
+            btn.dataset.index;
+
+            projects.splice(index, 1);
+
+            localStorage.setItem(
+                "projects",
+                JSON.stringify(projects)
+            );
+
+            loadProjects();
+            document.querySelector("#projectTitle").value = "";
+
+            document.querySelector("#projectDesc").value = "";
+
+            document.querySelector("#projectImg").value = "";
+
+            document.querySelector("#projectLive").value = "";
+
+            document.querySelector("#projectGithub").value = "";
+
+        });
+
+    });
 
 }

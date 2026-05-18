@@ -24,7 +24,15 @@
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            
         </ul>
+        <a href="piyush_resume.pdf"
+            download
+            class="resume-btn">
+
+                Download CV
+
+            </a>
         <button id="themeBtn">
                 Dark Mode
             </button>
@@ -122,38 +130,9 @@
     </section>
     <section class="projects hidden" id="projects">
     <h1>Projects</h1>
-    <div class="project-container">
-        <div class="project-card">
-            <h2>Portfolio Website</h2>
-            <p>
-                Responsive portfolio with dark mode and animations.
-            </p>
-            <button class="project-btn"
-            data-title="Portfolio Website"
-            data-desc="Responsive portfolio with dark mode, animations and modern UI."
-            data-img="img.jfif"
-            data-live="https://piyushhh-portfolio.netlify.app/"
-            data-github="https://github.com/piyush874">
-                View Project
-            </button>
-        </div>
-        <div class="project-card">
-            <h2>Notes App</h2>
-            <p>
-                Notes app with local storage and edit feature.
-            </p>
-            <button class="project-btn"
-            data-title="Notes App"
-            data-desc="Notes app with local storage, edit and delete functionality."
-            data-img="img.jfif"
-            data-live="https://amazing-notess.netlify.app/"
-            data-github="https://github.com/piyush874">
+    <div class="project-container" id="projectContainer">
 
-                View Project
-
-            </button>            
-        </div>
-    </div>
+</div>
     </section>
 
     <!-- Skills Section -->
@@ -315,8 +294,68 @@
     </div>
 
 </div>
+<!-- Admin Panel -->
+
+<div class="admin-panel" id="adminPanel">
+
+    <div class="admin-box">
+
+        <span id="closeAdmin">
+            ✖
+        </span>
+
+        <h2>Admin Dashboard</h2>
+
+        <input
+        type="password"
+        id="adminPassword"
+        placeholder="Enter Password">
+
+        <button id="loginAdminBtn">
+            Login
+        </button>
+
+        <div id="adminContent">
+
+            <input
+            type="text"
+            id="projectTitle"
+            placeholder="Project Title">
+
+            <textarea
+            id="projectDesc"
+            placeholder="Project Description"></textarea>
+
+            <input
+            type="text"
+            id="projectImg"
+            placeholder="Image Path">
+
+            <input
+            type="text"
+            id="projectLive"
+            placeholder="Live Link">
+
+            <input
+            type="text"
+            id="projectGithub"
+            placeholder="GitHub Link">
+
+            <button id="addProjectBtn">
+                Add Project
+            </button>
+            <button id="logoutAdminBtn">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
+
 </body>
 </html>
