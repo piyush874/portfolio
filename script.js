@@ -28,7 +28,6 @@ JSON.parse(localStorage.getItem("projects")) || [
         github:"https://github.com/piyush874"
 
     },
-
     {
 
         title:"NovaAI SaaS Dashboard",
@@ -37,6 +36,12 @@ JSON.parse(localStorage.getItem("projects")) || [
         live:"https://novaai-dashboard.netlify.app/",
         github:"https://github.com/piyush874"
 
+    }
+    {
+        title:"Client Management System",
+        desc:"A modern client management dashboard with login, validation, CRUD operations, status tracking and CSV export.",
+        live:"https://clientpro-dashboard.netlify.app/",
+        github:"https://github.com/piyush874"
     }
 
 ];
