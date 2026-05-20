@@ -27,6 +27,16 @@ JSON.parse(localStorage.getItem("projects")) || [
 
         github:"https://github.com/piyush874"
 
+    },
+
+    {
+
+        title:"NovaAI SaaS Dashboard",
+        desc:"Modern AI SaaS landing page with dashboard, content generator, analytics and project management.",
+        img:"novaai.png",
+        live:"https://novaai-dashboard.netlify.app/",
+        github:"https://github.com/piyush874"
+
     }
 
 ];
