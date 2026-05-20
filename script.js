@@ -37,10 +37,10 @@ JSON.parse(localStorage.getItem("projects")) || [
         github:"https://github.com/piyush874"
 
     },
-    
+
     {
         title:"Client Management System",
-        desc:"A modern client management dashboard with login, validation, CRUD operations, status tracking and CSV export.",
+        desc:"A modern client management dashboard with login, validation, CRUD operations, status tracking and CSV export.Demo Login: admin / 1234",
         live:"https://clientpro-dashboard.netlify.app/",
         github:"https://github.com/piyush874"
     }
